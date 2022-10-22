@@ -1,0 +1,4 @@
+#simple equation
+drug_a , drug_b , target_c
+
+total score = ( DTI(drug_a,target_c) + DTI(drug_b,target_c) ) * DDI ( drug_a , drug_b )
