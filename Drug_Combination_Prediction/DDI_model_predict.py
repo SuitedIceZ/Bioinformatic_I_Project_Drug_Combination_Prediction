@@ -63,3 +63,16 @@ X_pred = utils.data_process(X_drug=X_drugs_a, y=y_solution, drug_encoding='rdkit
 
 y_pred = model.predict(X_pred)
 print('The predicted score is ' + str(y_pred) + " and the true score is " + str(y_solution))
+
+# C1CC1NC2=C3C(=NC(=N2)N)N(C=N3)C4CC(C=C4)CO CC1=C2C=C(C=CC2=NN1)C3=CC(=CN=C3)OCC(CC4=CC=CC=C4)N None
+
+# predict sample 6
+X_drugs_a = ['C1CC1NC2=C3C(=NC(=N2)N)N(C=N3)C4CC(C=C4)CO']
+X_drugs_b = ['CC1=C2C=C(C=CC2=NN1)C3=CC(=CN=C3)OCC(CC4=CC=CC=C4)N']
+y_solution = [0.0]
+
+X_pred = utils.data_process(X_drug=X_drugs_a, y=y_solution, drug_encoding='rdkit_2d_normalized',
+                            split_method='no_split', mode='DDI', X_drug_=X_drugs_b)
+
+y_pred = model.predict(X_pred)
+print('The predicted score is ' + str(y_pred) + " and the true score is " + str(y_solution))
