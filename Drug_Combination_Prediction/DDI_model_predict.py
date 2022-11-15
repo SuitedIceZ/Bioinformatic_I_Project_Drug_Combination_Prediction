@@ -10,7 +10,9 @@ X_drugs_a = ['NC1=NC(=O)N(C=C1)[C@@H]1CS[C@H](CO)O1']
 X_drugs_b = ['OC[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO']
 y_solution = [0.5]
 
-X_pred = utils.data_process(X_drug=X_drugs_a, y=y_solution, drug_encoding='rdkit_2d_normalized',
+# X_pred = utils.data_process(X_drug=X_drugs_a, y=y_solution, drug_encoding='rdkit_2d_normalized',
+#                             split_method='no_split', mode='DDI', X_drug_=X_drugs_b)
+X_pred = utils.data_process(X_drug=X_drugs_a, y=y_solution,drug_encoding='rdkit_2d_normalized',
                             split_method='no_split', mode='DDI', X_drug_=X_drugs_b)
 
 y_pred = model.predict(X_pred)
