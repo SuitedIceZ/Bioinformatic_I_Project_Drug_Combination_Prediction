@@ -7,8 +7,8 @@ import pandas as pd
 df = pd.read_csv("data/DDI_data_P_compare_1-2_withY_v4.csv")
 
 # calculate error percentage for each model into numpy array
-error_1 = np.abs(df["DDI_model_1_predict"] - df["answer"]) / df["answer"] *100
-error_2 = np.abs(df["DDI_model_2_predict"] - df["answer"]) / df["answer"] *100
+error_1 = (np.abs(df["DDI_model_1_predict"] - df["answer"]) / df["answer"]) *100
+error_2 = (np.abs(df["DDI_model_2_predict"] - df["answer"]) / df["answer"]) *100
 
 # graph title is "DDI compare of model 1 and 2"
 plt.title("DDI compare of model 1 and 2")
